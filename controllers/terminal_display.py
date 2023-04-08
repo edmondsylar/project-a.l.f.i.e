@@ -38,10 +38,11 @@ class ResponseEngine:
 
     
     # function to show system booting up simple spinner.
-    def _loading(self, msg):
+    def _loading(self, msg, secs):
         console = Console()
         with console.status(f"[bold green] {msg}") as status:
-            for i in range(10):
-                time.sleep(1)
+            for i in range(secs):
+                time.sleep(0.1)
                 status.update(f"[bold green] {msg} {i+1}0%") 
 
+display = ResponseEngine()
